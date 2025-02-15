@@ -19,14 +19,13 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
 1. Crie o fluxograma de um programa que solicita que o usuário digite sua nota e em seguida o programa exibe se o aluno foi “Aprovado” ou “Reprovado”. Leve em consideração que a nota deve estar entre 0 e 100 e que a condição para aprovação é ter uma nota igual ou superior à 50.
    
     ```mermaid
-   
-    flowchart TD
-        start(( Início )) --> input[\ Digite sua Nota \]
-        input --> verification{ Nota >= 50? }
-        verification --> |Sim| A[/ Aprovado /]
-        verification --> |Não| B[/ Reprovado /]
-        A --> finish([ Fim ])
-        B --> finish
+   flowchart TD
+           start(( Início )) --> input[\ Digite sua Nota \]
+           input --> verification{ Nota >= 50? }
+           verification --> |Sim| A[/ Aprovado /]
+           verification --> |Não| B[/ Reprovado /]
+           A --> finish([ Fim ])
+           B --> finish
     ```
    
 2. Altere o exemplo anterior, acrescentando as seguintes condições: para ser o aprovado, o aluno precisar ter nota igual ou superior à 50 e frequência igual ou superior a 75%.
@@ -36,7 +35,7 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
       start(( Início )) --> input[\ Digite sua Nota \]
         input --> verification{ Nota >= 50? } 
         verification --> |Sim| A[/ Pré Aprovado /] --> input1
-        verification--> |Não| B[/ Reprovado /] -->
+        verification--> |Não| B[/ Reprovado /] 
         input1[\ Digite sua Frequencia \] 
         input1 --> verification1{ Frequencia >= 75%? }
         verification1 --> |Sim| C[/ Aprovado /]
@@ -45,8 +44,16 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
         C--> finish([ Fim ])
         D --> finish
    ```
+   OU
    ```mermaid
-
+   flowchart TD
+   start(( inicio )) --> input1[\ Digite sua nota entre 0 e 100 \]
+   input1 -->2[\ Digite sua frequencia em % \]
+   input2 -->a{ Nota >= 50 \n e \n frequencia>=100 }
+   verification -->|Sim| ouput1[/Aprovado/]
+   verification -->|Nao| ouput2[/Reprovado/]
+   ouput1 --> finish([Final])
+   ouput2 --> finish
    ```
 
    
@@ -54,28 +61,51 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    
    ```mermaid
    flowchart TD
-      B["Sua resposta aqui!"]
+     A((Inicio)) --> B[\Digite n1\]
+   B --> C[\Digite n2\]
+   C --> D[Resultado = N1 + N2]
+   D --> E[/Resultado/]
+   E --> F([Final])
    ```
    
 4. Elabore um fluxograma que leia um número e exiba se ele é positivo ou negativo.
    
    ```mermaid
    flowchart TD
-      C["Sua resposta aqui!"]
+      A((Inicio)) --> input[\Digite um Número\]
+   input --> entrada{O numero é maior \nOU \nigual a zero}
+   entrada -->|Sim| 1[/Número Positivo/]
+   entrada --> |Nao| 2[/Número Negativo/]
+   1 --> fim([Fim])
+   2 --> fim
+   
    ```
    
 5. Desenvolva um fluxograma que leia a idade de uma pessoa e indique se ela pode votar.
    
    ```mermaid
    flowchart TD
-      D["Sua resposta aqui!"]
+      A((Inicio)) --> input[\Digite sua Idade\]
+   input --> entrada{Tem 16 anos \nOU \n Mais que dezeseis}
+   entrada -->|Sim| 1{Tem titulo de Eleitor}
+   entrada --> |Nao| 2[/Não pode votar/]
+   1 --> |Sim| 3[/Pode Votar/]
+   1 --> |Não| 4[/Não Pode Votar/]
+   2 --> fim
+   3 --> fim
+   4 --> fim
    ```
    
 6. Crie um fluxograma que leia dois números e determine o maior entre eles.
    
    ```mermaid
    flowchart TD
-      E["Sua resposta aqui!"]
+      A((Inicio)) --> input[\Digite dois Numeros\]
+   input --> entrada{A é \nMaior OU igual \nque B}
+   entrada -->|Sim| 1[/O primeiro numero é maior/]
+   entrada --> |Nao| 2[/O segundo número é maior/]
+   1 --> fim
+   2 --> fim
    ```
    
 7. Crie um fluxograma que leia três números e determine o maior entre eles.
