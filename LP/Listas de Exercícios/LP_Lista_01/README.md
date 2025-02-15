@@ -102,17 +102,29 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    flowchart TD
       A((Inicio)) --> input[\Digite dois Numeros\]
    input --> entrada{A é \nMaior OU igual \nque B}
-   entrada -->|Sim| 1[/O primeiro numero é maior/]
-   entrada --> |Nao| 2[/O segundo número é maior/]
-   1 --> fim
+   entrada -->|Sim| 1{A é maior que B}
+   1 --> |sim| 2[/O primeiro é maior/]
+   1 --> |Não| 3[/Os números são iguais/]
+   entrada --> |Nao| 4[/O segundo número é maior/]
    2 --> fim
+   3 --> fim
+   4 --> fim
    ```
    
 7. Crie um fluxograma que leia três números e determine o maior entre eles.
    
    ```mermaid
    flowchart TD
-      F["Sua resposta aqui!"]
+   A[Início] --> B[Digite tres números]
+    B --> C{1 maior 2 \nE \n1 maior 3}
+    C -->|Sim| D[O maior número é o primeiro]
+    C -->|Não| E{2 > 3?}
+    E -->|Sim| F[O maior número é o segundo]
+    E -->|Não| G[O terceiro número é maior]
+    D --> H[Fim]
+    F --> H
+    G --> H
+
    ```
    
 8. Construa um fluxograma para calcular o fatorial de um número fornecido pelo usuário.
