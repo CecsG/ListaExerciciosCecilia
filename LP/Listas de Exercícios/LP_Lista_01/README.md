@@ -46,14 +46,7 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    ```
    OU
    ```mermaid
-   flowchart TD
-   start(( inicio )) --> input1[\ Digite sua nota entre 0 e 100 \]
-   input1 -->2[\ Digite sua frequencia em % \]
-   input2 -->a{ Nota >= 50 \n e \n frequencia>=100 }
-   verification -->|Sim| ouput1[/Aprovado/]
-   verification -->|Nao| ouput2[/Reprovado/]
-   ouput1 --> finish([Final])
-   ouput2 --> finish
+   
    ```
 
    
@@ -124,14 +117,21 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
     D --> H[Fim]
     F --> H
     G --> H
-
    ```
    
 8. Construa um fluxograma para calcular o fatorial de um número fornecido pelo usuário.
    
    ```mermaid
    flowchart TD
-      G["Sua resposta aqui!"]
+    A[Início] --> B[Digite um Número]
+    B --> C{N == 0 ou N == 1?}
+    C -- Sim --> D[ 1] --> E[Fim]
+    C -- Não --> F[Definir Fatorial = 1]
+    F --> G[i = 2 até N]
+    G --> H[Fatorial = Fatorial * i]
+    H --> G
+    G --> I[Imprime Fatorial]
+    I --> E
    ```
    
 9. Elabore um fluxograma para verificar se um número digitado pelo usuário é par.
