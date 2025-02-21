@@ -125,13 +125,13 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    flowchart TD
     A[Início] --> B[Digite um Número]
     B --> C{N == 0 ou N == 1?}
-    C -- Sim --> D[ 1] --> E[Fim]
+    C -- Sim --> D[ Fatorial = 1] --> finish[Fim]
     C -- Não --> F[Definir Fatorial = 1]
     F --> G[i = 2 até N]
-    G --> H[Fatorial = Fatorial * i]
+    G --> H[Fatorial = N * i]
     H --> G
     G --> I[Imprime Fatorial]
-    I --> E
+    I --> finish
    ```
    
 9. Elabore um fluxograma para verificar se um número digitado pelo usuário é par.
