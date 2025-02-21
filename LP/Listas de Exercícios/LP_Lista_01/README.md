@@ -130,7 +130,7 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
     F --> G[i = 2 até N]
     G --> H[Fatorial = N * i]
     H --> G
-    G --> I[Imprime Fatorial]
+    G --> I[Resultado Fatorial]
     I --> finish
    ```
    
@@ -144,12 +144,26 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    
    ```mermaid
    flowchart TD
-      H["Sua resposta aqui!"]
+      A[Início] --> B[Leia N]
+    B --> C{N é igual a 0?}
+    C -- Sim --> D[O número é Zero]
+    C -- Não --> E{N % 2 == 0?}
+    E -- Sim --> F[O número é Par]
+    E -- Não --> G[O número é Ímpar]
+    D --> H[Fim]
+    F --> H
+    G --> H
    ```
    
 10. Elabore um fluxograma para verificar se um número digitado pelo usuário é primo.
    
    ```mermaid
    flowchart TD
-      I["Sua resposta aqui!"]
+    A[Início] --> B[Leia N]
+    B --> C{N <= 1?}
+    C -- Sim --> D[Não é primo] --> finish[Fim]
+    C -- Não --> E[Divisão de 2 até N-1]
+    E --> F{É divisível?}
+    F -- Sim --> D
+    F -- Não --> H[É Primo] --> finish
    ```
