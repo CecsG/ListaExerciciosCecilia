@@ -5,7 +5,7 @@
 Profº.: Cainã Antunes Silva  
 Faculdade de Tecnologia **SENAI Sorocaba**  
 Tecnólogo em Análise e Desenvolvimento de Sistemas (ADS)
-___
+___   
 
 
 > O objetivo desta aula é exercitar o raciocínio lógico para a criação de algoritmos através de fluxogramas.  
